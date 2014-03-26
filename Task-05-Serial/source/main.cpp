@@ -95,12 +95,12 @@ void loop()
     		if (c >= 32 && c <= 126) // commit only printable ASCII characters to the buffer
     		{
     			command[amountCopied++] = c;
-    			usart_putchar(USART2, c); // echo back to console to I can see what I type
+    			usart_putchar(USART2, c); // echo back to console so I can see what I type
     		}
     		else if (c == 127 && amountCopied > 0) // DEL removes an item from our buffer
     		{
     			amountCopied--;
-    			usart_putchar(USART2, c); // echo back to console to I can see the deletion
+    			usart_putchar(USART2, c); // echo back to console so I can see the deletion
     		}
     	}
     	command[amountCopied] = '\0';
